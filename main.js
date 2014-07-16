@@ -3,6 +3,27 @@
 var game = new Phaser.Game(400, 600, Phaser.AUTO, "");
 
 // Creat the initial phaser state
+var mainMenu = {
+    preload: function(){
+      game.load.image('strt', 'assets/bnt_start.png');  
+    },
+    create: function(){
+        this.btnStart = game.add.button(
+            game.world.centerX, 
+            game.world.centerY, 
+            'strt', 
+            function(){
+                game.state.start('mainState');
+            });
+        this.btnStart.anchor.setTo(0.5);
+    },
+    update: function(){
+        
+    },  
+};
+
+
+// Create the main phaser state
 var mainState = {
     
     preload: function () {
@@ -83,5 +104,5 @@ var mainState = {
 };
 
 game.state.add('mainState', mainState);
-
-game.state.start('mainState');
+game.state.add('mainMenu', mainMenu);
+game.state.start('mainMenu');

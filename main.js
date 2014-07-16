@@ -6,7 +6,7 @@ var game = new Phaser.Game(400, 600, Phaser.AUTO, "");
 var mainState = {
     
     preload: function () {
-        game.load.image('bat', '/assets/bat.png');
+        game.load.image('bat', 'assets/bat.png');
         game.load.image('ball', 'assets/ball.png');
     },
     create: function () {

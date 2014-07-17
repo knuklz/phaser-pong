@@ -16,6 +16,8 @@ var mainMenu = {
                 game.state.start('mainState');
             });
         this.btnStart.anchor.setTo(0.5);
+        this.btnStart.scale.setTo(1,1);
+        game.add.tween(this.btnStart.scale).to({ x: 1.08, y: 1.08 }, 1000, Phaser.Easing.Linear.None, true, 0, Number.MAX_VALUE, true);
     },
     update: function(){
         
